@@ -50,15 +50,15 @@ export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element {
       "svg-inline--fa",
       props.icon,
       // `fa-${faicon.iconName}`,
-      "fa-fw"
-    ]
-    classList.push(props.size ? `fa-${props.size}` : 'fa-lg');
-    return classList.join(' ');
+      "fa-fw",
+    ];
+    classList.push(props.size ? `fa-${props.size}` : "fa-lg");
+    return classList.join(" ");
   }
-  
+
   return (
-    <svg 
-      aria-hidden="true" 
+    <svg
+      aria-hidden="true"
       data-prefix={faicon.prefix}
       data-icon={faicon.iconName}
       role="img"
@@ -69,5 +69,5 @@ export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element {
     >
       <path fill="currentColor" d={faicon.icon[4] as string}></path>
     </svg>
-  )
+  );
 }

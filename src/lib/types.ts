@@ -1,12 +1,12 @@
 import {
-  Transform,
-  IconProp,
-  FlipProp,
+  // Transform,
+  // IconProp,
+  // FlipProp,
   SizeProp,
-  PullProp,
-  RotateProp,
-  FaSymbol
-} from '@fortawesome/fontawesome-svg-core';
+  // PullProp,
+  // RotateProp,
+  // FaSymbol,
+} from "@fortawesome/fontawesome-svg-core";
 
 export type FontAwesomeIconProps = {
   icon: string;
@@ -29,7 +29,6 @@ export type FontAwesomeIconProps = {
   // inverse?: boolean
   // listItem?: boolean
   // flip?: FlipProp
-  
   // pull?: PullProp
   // rotation?: RotateProp
   // transform?: string | Transform
