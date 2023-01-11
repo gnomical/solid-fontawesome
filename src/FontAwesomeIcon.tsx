@@ -1,6 +1,7 @@
-import { JSX } from "solid-js";
+import { createSignal, JSX } from "solid-js";
 import { FontAwesomeIconProps } from "./lib/types";
 import { parse, icon } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element {
   console.log(props.icon);
@@ -44,8 +45,29 @@ export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element {
   // const title = props. || ;
   // const titleId = props. || ;
   // const swapOpacity = props. || ;
+  function classes() {
+    let classList = [
+      "svg-inline--fa",
+      props.icon,
+      // `fa-${faicon.iconName}`,
+      "fa-fw"
+    ]
+    classList.push(props.size ? `fa-${props.size}` : 'fa-lg');
+    return classList.join(' ');
+  }
   
   return (
-    <svg></svg>
+    <svg 
+      aria-hidden="true" 
+      data-prefix={faicon.prefix}
+      data-icon={faicon.iconName}
+      role="img"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={`0 0 ${faicon.icon[0]} ${faicon.icon[1]}`}
+      // class="svg-inline--fa fa-copy fa-fw fa-lg"
+      class={classes()}
+    >
+      <path fill="currentColor" d={faicon.icon[4] as string}></path>
+    </svg>
   )
 }
