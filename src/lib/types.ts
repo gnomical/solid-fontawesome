@@ -1,5 +1,5 @@
 import {
-  // Transform,
+  Transform,
   // IconProp,
   // FlipProp,
   SizeProp,
@@ -13,7 +13,7 @@ export type FontAwesomeIconProps = {
   size?: SizeProp;
   // mask?: IconProp
   // maskId?: string
-  // className?: string
+  className?: string;
   // color?: string
   // spin?: boolean
   // spinPulse?: boolean
@@ -26,12 +26,12 @@ export type FontAwesomeIconProps = {
   // shake?: boolean
   // border?: boolean
   // fixedWidth?: boolean
-  // inverse?: boolean
+  inverse?: boolean;
   // listItem?: boolean
   // flip?: FlipProp
   // pull?: PullProp
   // rotation?: RotateProp
-  // transform?: string | Transform
+  transform?: string | Transform;
   // symbol?: FaSymbol
   // style?: any
   // tabIndex?: number;

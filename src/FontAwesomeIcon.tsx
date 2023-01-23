@@ -1,25 +1,33 @@
-import { createSignal, JSX } from "solid-js";
+import { JSX } from "solid-js";
 import { FontAwesomeIconProps } from "./lib/types";
 import { parse, icon } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "./styles.css";
 
 export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element {
   console.log(props.icon);
-  // const [iconPrefix, iconName] = props.icon as IconProp[];
+  // const transform = typeof props.transform == 'object' ? props.transform : {};
+  const transform = typeof props.transform === 'string' ? parse.transform(props.transform) : props.transform;
+
+  console.log(transform);
   const faicon = icon(parse.icon(props.icon), {
-    // ...classes,
-    // ...transform,
+    classes: undefined,
+    ...transform,
+    mask: undefined,
     // ...mask,
-    // symbol,
-    // title,
-    // titleId,
-    // maskId
+    symbol: undefined,
+    title: undefined,
+    titleId: undefined,
+    maskId: undefined
   });
+
+  if(!faicon.prefix) {
+    console.error(`Please check that you have imported the '${props.icon}' icon to your library.`);
+  }
 
   console.log(faicon);
   // const mask = props. || ;
   // const maskId = props. || ;
-  // const className = props. || ;
   // const color = props. || ;
   // const spin = props. || ;
   // const spinPulse = props. || ;
@@ -45,15 +53,27 @@ export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element {
   // const title = props. || ;
   // const titleId = props. || ;
   // const swapOpacity = props. || ;
+
   function classes() {
     let classList = [
       "svg-inline--fa",
       props.icon,
       // `fa-${faicon.iconName}`,
-      "fa-fw",
+      // "fa-fw",
     ];
-    classList.push(props.size ? `fa-${props.size}` : "fa-lg");
+    classList.push(props.size ? `fa-${props.size}` : "");
+    if(props.className)
+      classList.push(props.className);
+    if(props.inverse)
+      classList.push("fa-inverse");
+
     return classList.join(" ");
+  }
+
+  function styles() {
+    let styles = "";
+    styles += `font-size:${transform?.size ? transform.size/16 : 1}em;`;
+    return styles;
   }
 
   return (
@@ -66,6 +86,7 @@ export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element {
       viewBox={`0 0 ${faicon.icon[0]} ${faicon.icon[1]}`}
       // class="svg-inline--fa fa-copy fa-fw fa-lg"
       class={classes()}
+      style={styles()}
     >
       <path fill="currentColor" d={faicon.icon[4] as string}></path>
     </svg>
