@@ -25,7 +25,11 @@ export default {
       format: "es",
     },
   ],
-  external: ["solid-js"],
+  external: [
+    "@fortawesome/fontawesome-svg-core",
+    "@fortawesome/fontawesome-svg-core/styles.css",
+    "solid-js",
+  ],
   plugins: [
     typescript({ compilerOptions: { jsx: "preserve" } }),
     json(),
