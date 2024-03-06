@@ -1,6 +1,6 @@
-import { JSX } from "solid-js";
+import { Accessor, createMemo, JSX } from "solid-js";
 import { FontAwesomeIconProps } from "./lib/types";
-import { parse, icon } from "@fortawesome/fontawesome-svg-core";
+import { parse, icon, Icon } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./styles.css";
 
@@ -10,7 +10,7 @@ export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element {
     typeof props.transform === "string" ? parse.transform(props.transform) : props.transform;
 
   // console.log(transform);
-  const faicon = icon(parse.icon(props.icon));
+  const faicon: Accessor<Icon> = createMemo<Icon>((): Icon => icon(parse.icon(props.icon)));
   // console.log(faicon);
 
   function classes() {
@@ -36,16 +36,16 @@ export function FontAwesomeIcon(props: FontAwesomeIconProps): JSX.Element {
   return (
     <svg
       aria-hidden="true"
-      data-prefix={faicon.prefix}
-      data-icon={faicon.iconName}
+      data-prefix={faicon().prefix}
+      data-icon={faicon().iconName}
       role="img"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox={`0 0 ${faicon.icon[0]} ${faicon.icon[1]}`}
+      viewBox={`0 0 ${faicon().icon[0]} ${faicon().icon[1]}`}
       // class="svg-inline--fa fa-copy fa-fw fa-lg"
       class={classes()}
       style={styles()}
     >
-      <path fill="currentColor" d={faicon.icon[4] as string}></path>
+      <path fill="currentColor" d={faicon().icon[4] as string}></path>
     </svg>
   );
 }
