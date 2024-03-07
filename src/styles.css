@@ -2,3 +2,12 @@
   color: currentColor;
   filter: invert();
 }
+
+/* .fa-swap-opacity {
+  &:first-child {
+    opacity: 0.4;
+  }
+  &:last-child {
+    opacity: 1;
+  }
+} */

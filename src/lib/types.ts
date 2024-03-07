@@ -37,5 +37,5 @@ export type FontAwesomeIconProps = {
   // tabIndex?: number;
   // title?: string;
   // titleId?: string;
-  // swapOpacity?: boolean;
+  swapOpacity?: boolean;
 };

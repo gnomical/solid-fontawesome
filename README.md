@@ -19,35 +19,37 @@ This library does not support babel-macros or a few of the "alternative" methods
 
 ## Supported Props <sup><sub>work in progress</sub></sup>
 
-- [x] icon: string
-- [x] size?: SizeProp
-- [ ] mask?: IconProp
-- [ ] maskId?: string
-- [x] class?: string  
-       this is the same as `className` in the react component
-- [ ] color?: string
-- [ ] spin?: boolean
-- [ ] spinPulse?: boolean
-- [ ] spinReverse?: boolean
-- [ ] pulse?: boolean
-- [ ] beat?: boolean
-- [ ] fade?: boolean
-- [ ] beatFade?: boolean
-- [ ] bounce?: boolean
-- [ ] shake?: boolean
-- [ ] border?: boolean
-- [ ] fixedWidth?: boolean
-- [x] inverse?: boolean  
-       instead of making the icon white, this library truly inverts the `currentColor`.  
-       That way it more easily works with dark or custom themes.
-- [ ] listItem?: boolean
-- [ ] flip?: FlipProp
-- [ ] pull?: PullProp
-- [ ] rotation?: RotateProp
-- [ ] transform?: string | Transform
-- [ ] symbol?: FaSymbol
-- [ ] style?: any
-- [ ] tabIndex?: number
-- [ ] title?: string
-- [ ] titleId?: string
-- [ ] swapOpacity?: boolean
+✅ icon: string  
+✅ size?: SizeProp  
+▢ mask?: IconProp  
+▢ maskId?: string  
+✅ class?: string  
+> equivalent of `className` in the react component  
+>   
+▢ color?: string  
+▢ spin?: boolean  
+▢ spinPulse?: boolean  
+▢ spinReverse?: boolean  
+▢ pulse?: boolean  
+▢ beat?: boolean  
+▢ fade?: boolean  
+▢ beatFade?: boolean  
+▢ bounce?: boolean  
+▢ shake?: boolean  
+▢ border?: boolean  
+▢ fixedWidth?: boolean  
+✅ inverse?: boolean  
+> instead of making the icon white, this library truly inverts the `currentColor`.  
+> That way it more easily works with dark or custom themes.  
+
+▢ listItem?: boolean  
+▢ flip?: FlipProp  
+▢ pull?: PullProp  
+▢ rotation?: RotateProp  
+▢ transform?: string | Transform  
+▢ symbol?: FaSymbol  
+▢ style?: any  
+▢ tabIndex?: number  
+▢ title?: string  
+▢ titleId?: string  
+✅ swapOpacity?: boolean
