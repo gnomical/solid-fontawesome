@@ -1,5 +1,9 @@
 # solid-fontawesome
 
+[![npm version](https://img.shields.io/npm/v/solid-fontawesome)](https://www.npmjs.com/package/solid-fontawesome)
+[![npm downloads](https://img.shields.io/npm/dm/solid-fontawesome)](https://www.npmjs.com/package/solid-fontawesome)
+[![license](https://img.shields.io/npm/l/solid-fontawesome)](LICENSE)
+
 A SolidJS component for the font-awesome icon library.
 
 ## How to Use
@@ -23,9 +27,7 @@ This library does not support babel-macros or a few of the "alternative" methods
 ✅ size?: SizeProp  
 ▢ mask?: IconProp  
 ▢ maskId?: string  
-✅ class?: string  
-> equivalent of `className` in the react component  
->   
+✅ className?: string
 ▢ color?: string  
 ▢ spin?: boolean  
 ▢ spinPulse?: boolean  
@@ -40,7 +42,7 @@ This library does not support babel-macros or a few of the "alternative" methods
 ▢ fixedWidth?: boolean  
 ✅ inverse?: boolean  
 > instead of making the icon white, this library truly inverts the `currentColor`.  
-> That way it more easily works with dark or custom themes.  
+> That way it more easily works with dark or custom themes.
 
 ▢ listItem?: boolean  
 ▢ flip?: FlipProp  
