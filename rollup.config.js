@@ -31,7 +31,7 @@ export default {
     "solid-js",
   ],
   plugins: [
-    typescript({ compilerOptions: { jsx: "preserve", outDir: "dist" } }),
+    typescript({ compilerOptions: { jsx: "preserve", outDir: "dist", declaration: false, emitDeclarationOnly: false } }),
     json(),
     postcss({
       minimize: true,
