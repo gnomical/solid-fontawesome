@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   publish:
+    if: github.event.deleted != true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
