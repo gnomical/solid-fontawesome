@@ -1,5 +1,9 @@
 # solid-fontawesome
 
+[![npm version](https://img.shields.io/npm/v/solid-fontawesome)](https://www.npmjs.com/package/solid-fontawesome)
+[![npm downloads](https://img.shields.io/npm/dm/solid-fontawesome)](https://www.npmjs.com/package/solid-fontawesome)
+[![license](https://img.shields.io/npm/l/solid-fontawesome)](LICENSE)
+
 A SolidJS component for the font-awesome icon library.
 
 ## How to Use
