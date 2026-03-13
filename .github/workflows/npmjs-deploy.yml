@@ -1,20 +1,23 @@
 name: Deploy to npmjs
 
 on:
-  create:
+  push:
     tags:
       - v*
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   publish:
+    if: github.event.deleted != true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
-      - run: npm install
-      - run: npm run build
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm publish
