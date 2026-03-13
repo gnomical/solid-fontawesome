@@ -6,8 +6,8 @@ import "./styles.css";
 
 const errSVG: JSX.Element = (
   <svg
-    aria-hidden="true"
     role="img"
+    aria-label="Icon failed to load"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
     class="svg-inline--fa"
